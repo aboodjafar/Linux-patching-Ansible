@@ -1,6 +1,5 @@
 ---
 - hosts: batch1 
-# ONCE YOU ARE DONE PLEASE REBOOT THE SERVERS WHICH ARE HAVING ISSUES WITH SCOM
   become: yes
   pre_tasks:
    - name: Make sure all the servers are pingable
