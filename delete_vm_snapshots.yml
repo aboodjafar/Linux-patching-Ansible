@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+   - name: Remove a snapshot
+     vmware_guest_snapshot:
+       hostname: 10.10.10.10 
+       username: 
+       password: 
+       name: LINUX601
+       datacenter: CERTIFICATION
+       folder: /LINUX_SERVERS
+       state: absent
+       snapshot_name: ua4linux_snap
+     delegate_to: localhost

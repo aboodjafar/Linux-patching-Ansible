@@ -1,0 +1,8 @@
+---
+- hosts: cleanup 
+  become: yes
+  tasks:
+   - name: Clean yum cache 
+     file:
+       path: /var/cache/yum/
+       state: absent

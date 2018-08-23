@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  vars:
+    data_center1: CERTIFICATION
+    folder1: /LINUX_SERVERS
+    server1: LINUX600
+  tasks:
+   - name: Create a snapshot
+     vmware_guest_snapshot:
+       hostname: 10.10.10.10 
+       username: 
+       password: 
+       datacenter: "{{ data_center1 }}" 
+       folder: "{{ folder1 }}"
+       name: "{{ server1 }}"
+       state: present 
+       snapshot_name: ua4linux_snap
+       description: snapshot
+     delegate_to: localhost

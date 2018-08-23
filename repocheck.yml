@@ -1,0 +1,15 @@
+---
+- hosts: cleanup
+  become: yes
+  tasks:
+   - name: Clean yum cache
+     file:
+       path: /var/cache/yum/
+       state: absent
+
+   - name: Check if the server is registered to latest Clone
+     shell: yum repolist
+     args:
+       warn: false
+     register: repo
+   - debug: var=repo.stdout_lines     
