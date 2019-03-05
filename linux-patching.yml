@@ -61,7 +61,7 @@
        state: absent
 
    - name: Curl
-     shell: curl -k https://www.calif.aaa.com/elb-check.txt
+     shell: curl -k https://www.ansible.com/elb-check.txt
      register: curl
    - debug: var=curl
 #   - name: Start the services #Change services according to the requirement
